@@ -7,7 +7,7 @@ import styles from '../../styles/Product.module.css'
 export const getStaticProps: GetStaticProps = async (context) => {
 
   const { params } = context
-  const { id } = params
+  const { id }: any = params
 
   const res = await fetch(`https://dummyjson.com/products/${id}`)
   const product = await res.json()
@@ -26,14 +26,14 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   const res = await fetch(`https://dummyjson.com/products`)
   const products = (await res.json()).products
 
-  const paths = products.map(product => ({ params: { id: product.id.toString() } }))
+  const paths = products.map((product: any): any => ({ params: { id: product.id.toString() } }))
 
   console.log('paths', paths)
 
 
   return {
     paths,
-    fallback: true
+    fallback: false
   }
 }
 

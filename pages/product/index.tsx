@@ -30,12 +30,12 @@ const ProductPage: NextPage = ({ products }: any) => {
             ⬅ Get back to home
         </Link>
         <div className={styles.productContainer}>
-            {products.map(product => {
+            {products.map((product: any) => {
 
                 const { id, thumbnail, title, price } = product
 
                 return (
-                    <Link href={`/product/${id}`} >
+                    <Link href={`/product/${id}`} key={id}>
                         <a className={styles.card}>
                             <Image src={thumbnail} width={300} height={200} alt={`${title}`}/>
                             <div className={styles.details}>

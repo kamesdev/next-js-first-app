@@ -1,0 +1,34 @@
+.card {
+    border: 1px solid rgb(77, 77, 77);
+    padding: 1rem;
+    width: 334px;
+}
+
+.details {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    text-overflow: ellipsis;
+}
+
+.productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem auto;
+}
+
+.container {
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+.singleProductContainer {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

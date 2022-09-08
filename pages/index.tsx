@@ -31,10 +31,12 @@ const Home: NextPage = () => {
             </a>
           </Link>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <Link href="/product" >
+            <a className={styles.card}>
+              <h2>{`(SSG)`} Products page example &rarr;</h2>
+              <p>The products page itself and all of the subpages of the products are generated at build time. Go to <code>{`/product/<id-of-product>`}</code> to see a single product</p>
+            </a>
+          </Link>
 
           <a
             href="https://github.com/vercel/next.js/tree/canary/examples"

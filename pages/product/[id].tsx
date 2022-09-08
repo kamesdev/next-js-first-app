@@ -46,7 +46,7 @@ const ProductPage: NextPage = ({ product }: any) => {
   return (
     <div className={styles.singleProductContainer}>
     <div className={styles.card}>
-      <Image src={thumbnail} width={300} height={200} />
+      <Image src={thumbnail} width={300} height={200} alt={`${title}`} />
       <div className={styles.details}>
         <h2>{title}</h2>
         <p>${price}</p>

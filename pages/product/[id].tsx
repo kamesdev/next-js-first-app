@@ -1,10 +1,10 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import styles from '../../styles/Product.module.css'
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const { params } = context
   const { id }: any = params
@@ -18,22 +18,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       product
     }
-  }
-}
-
-export const getStaticPaths: GetStaticPaths = async (context) => {
-
-  const res = await fetch(`https://dummyjson.com/products`)
-  const products = (await res.json()).products
-
-  const paths = products.map((product: any): any => ({ params: { id: product.id.toString() } }))
-
-  console.log('paths', paths)
-
-
-  return {
-    paths,
-    fallback: false
   }
 }
 
@@ -54,7 +38,7 @@ const ProductPage: NextPage = ({ product }: any) => {
     </div>
     <br />
     <Link href="/">
-      <a>
+      <a className='link'>
         ⬅ Go back home
       </a>
     </Link>

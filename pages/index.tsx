@@ -24,6 +24,7 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
+
           <Link href="/joke" >
             <a className={styles.card}>
               <h2>ISR {`(Incremental Static Regeneration)`} &rarr;</h2>
@@ -31,20 +32,19 @@ const Home: NextPage = () => {
             </a>
           </Link>
 
-          <Link href="/product" >
+          <Link href="/pokemon"> 
             <a className={styles.card}>
-              <h2>{`(SSG)`} Products page example &rarr;</h2>
-              <p>The products page itself and all of the subpages of the products are generated at build time. Go to <code>{`/product/<id-of-product>`}</code> to see a single product</p>
+              <h2>{`(SSG)`} Pokemons page example &rarr;</h2>
+              <p>The pokemon page itself and all of the subpages of the products are generated at <b>build time</b>. Go to <code>{`/pokemon/<id-of-pokemon>`}</code> to see a single pokemon</p>
             </a>
           </Link>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          <Link href="/product" >
+            <a className={styles.card}>
+              <h2>{`(SSR)`} Products page example &rarr;</h2>
+              <p>The products page itself and all of the subpages of the products are generated at <b>every request</b>. Go to <code>{`/product/<id-of-product>`}</code> to see a single pokemon</p>
+            </a>
+          </Link>
 
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

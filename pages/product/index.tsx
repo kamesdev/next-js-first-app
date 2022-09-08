@@ -1,16 +1,14 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import styles from '../../styles/Product.module.css'
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 
   const res = await fetch(`https://dummyjson.com/products`)
   const products = (await res.json()).products
   
-  console.log('products', products)
-
   return {
     props: {
         products
@@ -20,14 +18,13 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const ProductPage: NextPage = ({ products }: any) => {
 
-
-  console.log(styles);
-
   return (
     <div className={styles.container}>
-        <h1>Products page</h1>
+        <h1>Products</h1>
         <Link href="/">
+          <a className="link">
             ⬅ Get back to home
+          </a>  
         </Link>
         <div className={styles.productContainer}>
             {products.map((product: any) => {
@@ -37,10 +34,12 @@ const ProductPage: NextPage = ({ products }: any) => {
                 return (
                     <Link href={`/product/${id}`} key={id}>
                         <a className={styles.card}>
-                            <Image src={thumbnail} width={300} height={200} alt={`${title}`}/>
+                            <div className={styles.productImage}>
+                              <Image src={thumbnail} layout={'fill'} objectFit='contain' />
+                            </div>
                             <div className={styles.details}>
                             <h2>{title}</h2>
-                            <p>${price}</p>
+                            <h3>${price}</h3>
                             </div>
                         </a>
                     </Link>

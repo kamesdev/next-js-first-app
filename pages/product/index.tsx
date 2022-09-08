@@ -35,9 +35,9 @@ const ProductPage: NextPage = ({ products }: any) => {
                 const { id, thumbnail, title, price } = product
 
                 return (
-                    <Link href={`/product/${id}`}>
+                    <Link href={`/product/${id}`} >
                         <a className={styles.card}>
-                            <Image src={thumbnail} width={300} height={200} />
+                            <Image src={thumbnail} width={300} height={200} alt={`${title}`}/>
                             <div className={styles.details}>
                             <h2>{title}</h2>
                             <p>${price}</p>

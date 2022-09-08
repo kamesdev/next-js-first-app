@@ -1,1 +1,1 @@
-This is my first test next js project
+This is my first test next js project!

@@ -44,12 +44,12 @@ code {
   color: rgb(64, 207, 255);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
+html {
     color-scheme: dark;
   }
-  body {
+
+body {
     color: white;
     background: black;
-  }
 }
+

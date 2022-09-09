@@ -35,7 +35,7 @@ const ProductPage: NextPage = ({ products }: any) => {
                     <Link href={`/product/${id}`} key={id}>
                         <a className={styles.card}>
                             <div className={styles.productImage}>
-                              <Image src={thumbnail} layout={'fill'} objectFit='contain' />
+                              <Image src={thumbnail} layout={'fill'} objectFit='contain' alt={title}/>
                             </div>
                             <div className={styles.details}>
                             <h2>{title}</h2>

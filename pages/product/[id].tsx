@@ -37,9 +37,9 @@ const ProductPage: NextPage = ({ product }: any) => {
       </div>
     </div>
     <br />
-    <Link href="/">
+    <Link href="/product">
       <a className='link'>
-        ⬅ Go back home
+        ⬅ Go back to products
       </a>
     </Link>
     </div>

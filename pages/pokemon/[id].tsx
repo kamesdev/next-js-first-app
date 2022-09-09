@@ -54,7 +54,7 @@ const PokemonPage: NextPage = ({ pokemon }: any) => {
   return (
     <div className={styles.wrapper}>
         <div className={styles.pokemon}>
-            <Image src={image} width={200} height={200} />
+            <Image src={image} width={200} height={200} alt={name} />
             <h2>{name}</h2>
             <ul className={styles.pokemonDetailsUl}>
                 <li className={styles.pokemonDetailsLi}>

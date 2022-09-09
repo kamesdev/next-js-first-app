@@ -5,6 +5,9 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 
+import styles from '../styles/Joke.module.scss'
+
+
 export const getStaticProps: GetStaticProps  = async (context) => {
 
   const { params } = context
@@ -31,8 +34,15 @@ const Joke: NextPage = ({ joke }: any) => {
     <Head>
       <title>Some random joke</title>
     </Head>
-    <p>Joke {joke}</p>
-    <Link href="/">Back to home</Link>
+
+    <div className={styles.container}>
+      <p className={styles.joke}>{joke}</p>
+      <Link href="/">
+          <a className="link">
+            ⬅ Get back to home
+          </a>  
+        </Link>
+    </div>
     </>
   )
 }

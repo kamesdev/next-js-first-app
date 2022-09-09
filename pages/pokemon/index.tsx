@@ -39,15 +39,18 @@ const PokemonsPage: NextPage = ({ pokemons }: any) => {
 
                 return (
                     <>
-                        <Link href={`/pokemon/${id}`} key={id}>
-                            <div className={styles.pokemonCard}>
-                                    <Image src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`} width={200} height={200} />
-                                    <h2>{name}</h2>
+                        <Link href={`/pokemon/${id}`} >
+                            <div className={styles.pokemonCard} key={id}>
+                                <Image 
+                                src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`} 
+                                width={200} 
+                                height={200}
+                                alt={name} />
+                                <h2>{name}</h2>
                             </div>
                         </Link>
                     </>
                 )
-
             })}
         </div>
 

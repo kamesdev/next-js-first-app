@@ -27,34 +27,31 @@ const Home: NextPage = () => {
 
           <Link href="/joke" >
             <a className={styles.card}>
-              <h2>ISR {`(Incremental Static Regeneration)`} &rarr;</h2>
-              <p>Go to this website to see random Chuck Noris joke and On-demand revalidate it using <code>{`/revalidate?secret=<revalidation_token> &route=<route>`}</code></p>
+              <h2>ISR Chuck Norris Joke generator &rarr;</h2>
+              <p>This website is build once (SSG) or revalidated using <code>{`/revalidate?secret=<revalidation_token> &route=<route>`}</code></p>
             </a>
           </Link>
 
           <Link href="/pokemon"> 
             <a className={styles.card}>
               <h2>{`(SSG)`} Pokemons page example &rarr;</h2>
-              <p>The pokemon page itself and all of the subpages of the products are generated at <b>build time</b>. Go to <code>{`/pokemon/<id-of-pokemon>`}</code> to see a single pokemon</p>
+              <p>These pages are generated at <b>build time</b>. Go to <code>{`/pokemon/<id-of-pokemon>`}</code> to see a single pokemon</p>
             </a>
           </Link>
 
           <Link href="/product" >
             <a className={styles.card}>
               <h2>{`(SSR)`} Products page example &rarr;</h2>
-              <p>The products page itself and all of the subpages of the products are generated at <b>every request</b>. Go to <code>{`/product/<id-of-product>`}</code> to see a single pokemon</p>
+              <p>These pages are generated at <b>every request</b>. Go to <code>{`/product/<id-of-product>`}</code> to see a single pokemon</p>
             </a>
           </Link>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <Link href="/character" >
+            <a className={styles.card}>
+              <h2>{`(CSR)`} Breaking Bad characters example &rarr;</h2>
+              <p>These pages re generated on <b>client side</b>. Go to <code>{`/character/<id-of-character>`}</code> to see a single character</p>
+            </a>
+          </Link>
         </div>
       </main>
 
